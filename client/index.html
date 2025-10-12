@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hotellbokning</title>
+
+    <link rel="stylesheet" href="./styles.css" />
+
+    <!-- Flatpickr (datumväljare) -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+    <script defer src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/sv.js"
+    ></script>
+  </head>
+
+  <body>
+    <main class="container">
+      <h1>Hotellbokning</h1>
+
+      <section class="rooms">
+        <button class="room-btn" data-type="Single">Välj Single</button>
+        <button class="room-btn" data-type="Double">Välj Double</button>
+      </section>
+
+      <form id="booking-form" class="card">
+        <h2>Boka rum</h2>
+
+        <label>
+          Rumstyp
+          <select name="room_type" required>
+            <option value="Single">Single</option>
+            <option value="Double">Double</option>
+          </select>
+        </label>
+
+        <label>
+          Namn
+          <input name="guest_name" required />
+        </label>
+
+        <label>
+          E-post
+          <input type="email" name="guest_email" required />
+        </label>
+
+        <label>
+          Telefon
+          <input name="guest_phone" />
+        </label>
+
+        <div class="row">
+          <label>
+            Incheckning
+            <input
+              type="text"
+              id="start_date"
+              name="start_date"
+              required
+              placeholder="ÅÅÅÅ-MM-DD"
+            />
+          </label>
+
+          <label>
+            Utcheckning
+            <input
+              type="text"
+              id="end_date"
+              name="end_date"
+              required
+              placeholder="ÅÅÅÅ-MM-DD"
+            />
+          </label>
+        </div>
+
+        <button type="submit" class="primary">Skicka bokning</button>
+        <p id="msg" class="msg"></p>
+      </form>
+
+      <section class="card">
+        <h2>Senaste bokningar (test)</h2>
+        <button id="load">Ladda bokningar</button>
+        <pre id="list"></pre>
+      </section>
+    </main>
+
+    <script src="./main.js" defer></script>
+  </body>
+</html>
