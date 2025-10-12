@@ -3,11 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Hotellbokning</title>
+    <title>Hotellbokning – HotSoft Lite</title>
 
     <link rel="stylesheet" href="./styles.css" />
 
-    <!-- Flatpickr (datumväljare) -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
@@ -18,76 +17,94 @@
       src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/sv.js"
     ></script>
   </head>
-
   <body>
-    <main class="container">
-      <h1>Hotellbokning</h1>
+    <!-- Header -->
+    <header class="header">
+      <div class="header__inner">
+        <div class="brand">
+          <span class="brand__title">HotSoft Lite</span>
+          <span class="brand__sub">Bokningssystem</span>
+        </div>
+      </div>
+    </header>
 
-      <section class="rooms">
+    <main class="container">
+      <h1 class="page-title">Hotellbokning</h1>
+
+      <!-- Snabbval av rumstyp -->
+      <section class="room-choice">
         <button class="room-btn" data-type="Single">Välj Single</button>
         <button class="room-btn" data-type="Double">Välj Double</button>
       </section>
 
+      <!-- Bokningsformulär -->
       <form id="booking-form" class="card">
-        <h2>Boka rum</h2>
+        <h2 class="card__title">Boka rum</h2>
 
-        <label>
-          Rumstyp
+        <label class="field">
+          <span class="field__label">Rumstyp</span>
           <select name="room_type" required>
             <option value="Single">Single</option>
             <option value="Double">Double</option>
           </select>
         </label>
 
-        <label>
-          Namn
+        <label class="field">
+          <span class="field__label">Namn</span>
           <input name="guest_name" required />
         </label>
 
-        <label>
-          E-post
+        <label class="field">
+          <span class="field__label">E-post</span>
           <input type="email" name="guest_email" required />
         </label>
 
-        <label>
-          Telefon
+        <label class="field">
+          <span class="field__label">Telefon</span>
           <input name="guest_phone" />
         </label>
 
         <div class="row">
-          <label>
-            Incheckning
+          <label class="field">
+            <span class="field__label">Incheckning</span>
             <input
               type="text"
               id="start_date"
               name="start_date"
+              lang="sv-SE"
               required
               placeholder="ÅÅÅÅ-MM-DD"
             />
           </label>
 
-          <label>
-            Utcheckning
+          <label class="field">
+            <span class="field__label">Utcheckning</span>
             <input
               type="text"
               id="end_date"
               name="end_date"
+              lang="sv-SE"
               required
               placeholder="ÅÅÅÅ-MM-DD"
             />
           </label>
         </div>
 
-        <button type="submit" class="primary">Skicka bokning</button>
+        <button type="submit" class="btn primary">Skicka bokning</button>
         <p id="msg" class="msg"></p>
       </form>
 
+      <!-- Testsektion: senaste bokningar -->
       <section class="card">
-        <h2>Senaste bokningar (test)</h2>
-        <button id="load">Ladda bokningar</button>
-        <pre id="list"></pre>
+        <h2 class="card__title">Senaste bokningar (test)</h2>
+        <button id="load" class="btn">Ladda bokningar</button>
+        <pre id="list" class="pre"></pre>
       </section>
     </main>
+
+    <footer class="footer">
+      <p>© 2025 HotSoft Lite – Skolprojekt</p>
+    </footer>
 
     <script src="./main.js" defer></script>
   </body>
