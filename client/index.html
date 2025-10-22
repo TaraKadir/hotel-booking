@@ -3,6 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="En enkel hotellbokning skapad som skolprojekt (HotSoft Lite)."
+    />
     <title>Hotellbokning – HotSoft Lite</title>
 
     <link rel="stylesheet" href="./styles.css" />
@@ -17,8 +21,8 @@
       src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/sv.js"
     ></script>
   </head>
+
   <body>
-    <!-- Header -->
     <header class="header">
       <div class="header__inner">
         <div class="brand">
@@ -31,13 +35,11 @@
     <main class="container">
       <h1 class="page-title">Hotellbokning</h1>
 
-      <!-- Snabbval av rumstyp -->
       <section class="room-choice">
         <button class="room-btn" data-type="Single">Välj Single</button>
         <button class="room-btn" data-type="Double">Välj Double</button>
       </section>
 
-      <!-- Bokningsformulär -->
       <form id="booking-form" class="card">
         <h2 class="card__title">Boka rum</h2>
 
@@ -94,7 +96,6 @@
         <p id="msg" class="msg"></p>
       </form>
 
-      <!-- Testsektion: senaste bokningar -->
       <section class="card">
         <h2 class="card__title">Senaste bokningar (test)</h2>
         <button id="load" class="btn">Ladda bokningar</button>
