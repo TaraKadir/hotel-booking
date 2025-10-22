@@ -1,16 +1,24 @@
 {
   "name": "hotel-booking",
   "version": "1.0.0",
-  "main": "index.js",
+  "private": true,
+  "description": "En enkel hotellbokning med Express + MySQL (G-nivå).",
+  "author": "Ditt Namn",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TaraKadir/hotel-booking.git"
+  },
+  "main": "server/index.js",
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server/index.js",
-    "dev": "nodemon server/index.js"
+    "dev": "nodemon server/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
