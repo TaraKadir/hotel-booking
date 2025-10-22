@@ -5,6 +5,7 @@ const list = document.getElementById("list");
 
 let startPicker, endPicker;
 
+// Initiera datumväljare (flatpickr)
 document.addEventListener("DOMContentLoaded", () => {
   startPicker = flatpickr("#start_date", {
     dateFormat: "Y-m-d",
@@ -27,6 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+// Snabbval av rumstyp
 document.querySelectorAll(".room-btn").forEach((btn) => {
   btn.addEventListener("click", () => {
     form.elements.room_type.value = btn.dataset.type;
@@ -34,6 +36,7 @@ document.querySelectorAll(".room-btn").forEach((btn) => {
   });
 });
 
+// Skicka bokningsformulär
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
   msg.textContent = "";
@@ -69,6 +72,7 @@ form.addEventListener("submit", async (e) => {
   }
 });
 
+// Ladda och visa bokningar
 loadBtn.addEventListener("click", async () => {
   list.textContent = "Laddar...";
   loadBtn.disabled = true;
@@ -96,7 +100,7 @@ loadBtn.addEventListener("click", async () => {
     }));
 
     list.textContent = JSON.stringify(formatted, null, 2);
-  } catch {
+  } catch (err) {
     list.textContent = "Kunde inte ladda bokningar.";
   } finally {
     loadBtn.disabled = false;
